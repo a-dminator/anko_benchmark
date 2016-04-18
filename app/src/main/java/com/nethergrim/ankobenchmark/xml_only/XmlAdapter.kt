@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import com.nethergrim.ankobenchmark.DataProvider
 import com.nethergrim.ankobenchmark.R
 import com.nethergrim.ankobenchmark.User
@@ -34,6 +35,10 @@ class XmlAdapter: RecyclerView.Adapter<XmlViewHolder>() {
         holder?.bind(users[position])
         if (position == users.size - 1){
             Log.d("xml", "reached the end")
+            val min = timeRecords.min()
+            val max = timeRecords.max()
+            val avg = timeRecords.average()
+            Toast.makeText(holder?.itemView?.context,"ANKO\nmin: $min, max: $max, avg: $avg" , Toast.LENGTH_LONG).show()
         }
     }
 }

@@ -3,6 +3,7 @@ package com.nethergrim.ankobenchmark.anko_only
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.ViewGroup
+import android.widget.Toast
 import com.nethergrim.ankobenchmark.DataProvider
 import java.util.*
 
@@ -26,6 +27,10 @@ class AnkoAdapter: RecyclerView.Adapter<AnkoViewHolder>() {
         holder?.bind(data[position])
         if (position == data.size - 1){
             Log.d("anko", "reached the end")
+            val min = timeRecords.min()
+            val max = timeRecords.max()
+            val avg = timeRecords.average()
+            Toast.makeText(holder?.itemView?.context,"XML\nmin: $min, max: $max, avg: $avg" , Toast.LENGTH_LONG).show()
         }
     }
 
