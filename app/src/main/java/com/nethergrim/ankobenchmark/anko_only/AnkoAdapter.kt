@@ -30,7 +30,7 @@ class AnkoAdapter: RecyclerView.Adapter<AnkoViewHolder>() {
             val min = timeRecords.min()
             val max = timeRecords.max()
             val avg = timeRecords.average()
-            Toast.makeText(holder?.itemView?.context,"XML\nmin: $min, max: $max, avg: $avg" , Toast.LENGTH_LONG).show()
+            Toast.makeText(holder?.itemView?.context,"ANKO\nmin: $min, max: $max, avg: $avg" , Toast.LENGTH_LONG).show()
         }
     }
 
