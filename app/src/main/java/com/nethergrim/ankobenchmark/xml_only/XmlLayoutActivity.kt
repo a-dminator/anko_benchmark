@@ -9,6 +9,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import com.nethergrim.ankobenchmark.R
 import com.nethergrim.ankobenchmark.anko_only.AnkoActivity
+import com.nethergrim.ankobenchmark.janko.JankoActivity
 import org.jetbrains.anko.intentFor
 
 class XmlLayoutActivity : AppCompatActivity() {
@@ -30,7 +31,13 @@ class XmlLayoutActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        startActivity(intentFor<AnkoActivity>())
+
+        when (item?.itemId) {
+            R.id.anko -> startActivity(intentFor<AnkoActivity>())
+            R.id.janko -> startActivity(intentFor<JankoActivity>())
+        }
+
         return true
     }
+
 }

@@ -38,7 +38,9 @@ class XmlAdapter: RecyclerView.Adapter<XmlViewHolder>() {
             val min = timeRecords.min()
             val max = timeRecords.max()
             val avg = timeRecords.average()
-            Toast.makeText(holder?.itemView?.context,"XML\nmin: $min ms, max: $max ms, avg: $avg ms" , Toast.LENGTH_LONG).show()
+            val out = "min: $min ms, max: $max ms, avg: $avg ms"
+            Toast.makeText(holder?.itemView?.context, "Xml $out", Toast.LENGTH_LONG).show()
+            Log.e("Xml", out)
         }
     }
 }

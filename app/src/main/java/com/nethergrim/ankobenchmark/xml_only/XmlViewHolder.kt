@@ -7,6 +7,7 @@ import android.widget.TextView
 import com.facebook.drawee.view.SimpleDraweeView
 import com.nethergrim.ankobenchmark.R
 import com.nethergrim.ankobenchmark.User
+import org.jetbrains.anko.find
 
 /**
  * Created by andrej on 17.04.16.
@@ -19,10 +20,10 @@ class XmlViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
     var text3: TextView? = null
 
     init {
-        image = itemView?.findViewById(R.id.image) as SimpleDraweeView?;
-        text1 = itemView?.findViewById(R.id.text1) as TextView?;
-        text2 = itemView?.findViewById(R.id.text2) as TextView?;
-        text3 = itemView?.findViewById(R.id.text3) as TextView?;
+        image = itemView?.find<SimpleDraweeView>(R.id.image)
+        text1 = itemView?.find<TextView>(R.id.text1)
+        text2 = itemView?.find<TextView>(R.id.text2)
+        text3 = itemView?.find<TextView>(R.id.text3)
     }
 
     fun bind(user: User) {
@@ -31,4 +32,5 @@ class XmlViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
         text2?.text = user.title
         text3?.text = user.lastSeen
     }
+
 }
